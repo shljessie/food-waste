@@ -39,4 +39,6 @@
 2. command+J = opening up the terminal in VSCode
 3. Git commands website : https://www.earthdatascience.org/workshops/intro-version-control-git/basic-git-commands/ 
 
+4. VScode extensions!! : https://dev.to/javascriptacademy/top-10-vscode-extensions-for-web-developers-19jg 
+
 
