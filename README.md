@@ -33,3 +33,10 @@
 - Weekly Meetings : Saturday 11am
 
 ## Before Next Meeting 
+
+## Commands
+1. control+shift+P = opening command bar 
+2. command+J = opening up the terminal in VSCode
+
+
+
