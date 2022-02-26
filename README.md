@@ -34,6 +34,9 @@
 
 ## Before Next Meeting 
 
+## Data Attributes 
+- Picture of fridge
+
 ## Commands
 1. control+shift+P = opening command bar 
 2. command+J = opening up the terminal in VSCode
