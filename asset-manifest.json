@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/foodwaste/static/css/main.073c9b0a.css",
+    "main.js": "/foodwaste/static/js/main.8cf5cad8.js",
+    "static/js/787.d9a1ee03.chunk.js": "/foodwaste/static/js/787.d9a1ee03.chunk.js",
+    "static/media/logo.svg": "/foodwaste/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/foodwaste/index.html",
+    "main.073c9b0a.css.map": "/foodwaste/static/css/main.073c9b0a.css.map",
+    "main.8cf5cad8.js.map": "/foodwaste/static/js/main.8cf5cad8.js.map",
+    "787.d9a1ee03.chunk.js.map": "/foodwaste/static/js/787.d9a1ee03.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.8cf5cad8.js"
+  ]
+}
