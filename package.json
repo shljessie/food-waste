@@ -1,7 +1,7 @@
 {
-  "name": "food-waste",
+  "name": "foodWaste",
   "version": "0.1.0",
-  "homepage": "https://shljessie.github.io/food-waste",
+  "homepage": "https://shljessie.github.io/foodWaste",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
@@ -18,7 +18,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b main -d build"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
