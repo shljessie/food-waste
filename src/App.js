@@ -1,23 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
 
+import * as d3 from 'd3';
+
+import {useEffect, useState} from 'react'
+
+import React from "react";
+import foodWeight from './data/foodWeight.csv'
+
+d3.csv(foodWeight, function(foodWeight) { console.log(foodWeight); });
+
+
 function App() {
+  let data;
+  React.useEffect(() => {
+    d3.csv(foodWeight).then((d) => {
+      console.log(d)
+      data=d;
+      console.log(data)
+      
+      d3.select('#pgraphs').selectAll('p').data(data).enter().append('p').text(dt => dt.Commodity + ": " + dt.Kilo)
+    });
+    return () => undefined;
+
+  }, [])
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <body>
+        <div id="pgraphs"></div>
+      </body>
     </div>
   );
 }
