@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+#BarChart { 
+  display: flex; 
+  flex-direction: row; 
+  align-items: flex-end; 
+  justify-content: center; 
+  margin: 50px;
+}
+
+.bar {
+  background-color: lightgray;
+  width: 10px; 
+  min-height: 150px;
+}
