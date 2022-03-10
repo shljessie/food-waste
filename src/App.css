@@ -43,6 +43,7 @@
   align-items: flex-end; 
   justify-content: center; 
   margin: 50px;
+  padding: 30px;
 }
 
 .bar {

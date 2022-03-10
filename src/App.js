@@ -6,31 +6,36 @@ import {useEffect, useState} from 'react'
 
 import React from "react";
 import foodWeight from './data/foodWeight.csv'
-import rd3 from 'react-d3-library';
-
-const BarChart = rd3.BarChart;
 
 function App() {
   let data;
   let foodCat = [];
   let foodKilo = [];
+  let width=800;
+  let height=400;
+
+  let x = d3.scaleBand().rangeRound([0, width]).padding(0.1);
+  let y = d3.scaleLinear().rangeRound([height, 0]);
+
 
   
   React.useEffect(() => {
     d3.csv(foodWeight).then((d) => {
-      // console.log(d)
       data=d;
-      // console.log(data)
-      
-      d3.select('#pgraphs').selectAll('p').data(data).enter().append('p').text(dt => dt.Commodity + ": " + dt.Kilo)
+
+      console.log(data);
+      // d3.select('#pgraphs').selectAll('p').data(data).enter().append('p').text(dt => dt.Commodity + ": " + dt.Kilo)
 
       for (let i = 0; i < data.length; i++) {
         foodCat.push(data[i].Commodity);
         foodKilo.push(data[i].Kilo);
       }
 
-      console.log(foodCat);
-      console.log(foodKilo);
+      // console.log(foodCat);
+      // console.log(foodKilo);
+
+      x.domain(foodCat);
+      y.domain([0, d3.max(foodKilo, function(d) { return d; })]);
 
       
       const getMax = () => { 
@@ -43,25 +48,48 @@ function App() {
 
       // Food Waste Average Bar display
       // Before bar animation (might have to delete later)
-      d3.select('#BarChart').selectAll('div').data(data) 
-      .enter().append('div').classed('bar', true).style('height', `${(getMax()*20)+150 }px`)
+      d3.select('#BarChart')
+        .selectAll('div')
+        .data(data) 
+        .enter()
+        .append('div')
+        .classed('bar', true)
+        .style('height', `${(getMax()*20)+150 }px`)
+
   
       // After bar animation 
-      d3.select('#BarChart').selectAll('.bar')
-      .transition().duration(1000).style('height', bar => `${(bar.Kilo*20)+150}px`)
-        .style('width', '80px').style('margin-right', '10px').delay(300)
+      d3.select('#BarChart')
+        .selectAll('.bar')
+        .transition()
+        .duration(1000)
+        .style('height', bar => `${(bar.Kilo*20)+150}px`)
+        .style('width', '80px')
+        .style('margin-right', '10px')
+        .delay(300)
         
-    var x = d3.scaleBand().rangeRound([0, 800]).paddingInner(0.05);
 
-    var y = d3.scaleLinear().range([500, 0]);
+      // adding bar chart labeling
+      d3.select('#BarChart')
+        .selectAll('.bar') 
+        .data(data) 
+        .append('text')
+        .text(function (d,i) { return data[i].Commodity  +"                     " + data[i].Kilo; })
+        .attr('x',function (d,i) { return 80*i })
+        .attr('y', function (d,i) { return data[i].Kilo*20; } )
 
-     const xScale = d3.scaleBand()
-        .domain(data.map(d => d.Commodity))
-        .range([0, 500]);
-        
-     const yScale = d3.scaleLinear()
-        .domain([0, d3.max(data, d => d.Kilo)])
-        .range([500, 0]);
+      // adding bar chart input
+      d3.select('#BarChart')
+        .selectAll('.bar') 
+        .data(data) 
+        .append('text')
+        .text('food amount: ')
+        .append('input')
+        .attr('class', function (d,i) { return i } )
+        .attr('x',function (d,i) { return 0 })
+        .attr('y', function (d,i) { return data[i].Kilo*20; } )
+        .style('width', '70px')
+        .style('height', '20px')
+
 
     });
     return () => undefined;
@@ -83,6 +111,4 @@ function App() {
 export default App;
 
 
-// next steps 
-// create input box under each of the bar graphs
-// label amount below and on the bar
+
