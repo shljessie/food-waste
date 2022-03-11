@@ -78,17 +78,64 @@ function App() {
         .attr('y', function (d,i) { return data[i].Kilo*20; } )
 
       // adding bar chart input
-      d3.select('#BarChart')
-        .selectAll('.bar') 
-        .data(data) 
+      d3.select('#Inputs')
+        .selectAll('div')
+        .data(data)
+        .enter()
+        .append('div')
         .append('text')
         .text('food amount: ')
         .append('input')
-        .attr('class', function (d,i) { return i } )
+        .attr('class', function (d,i) { return 'input'+i } )
         .attr('x',function (d,i) { return 0 })
         .attr('y', function (d,i) { return data[i].Kilo*20; } )
         .style('width', '70px')
         .style('height', '20px')
+
+      // let inputDict={};
+      // on user input change
+      
+   
+      const input0 = document.querySelector('.input0');
+      const input1 = document.querySelector('.input1');
+      const input2 = document.querySelector('.input2');
+      const input3 = document.querySelector('.input3');
+      const input4 = document.querySelector('.input4');
+      const input5 = document.querySelector('.input5');
+      const input6 = document.querySelector('.input6');
+      const input7 = document.querySelector('.input7');
+      const input8 = document.querySelector('.input8');
+      const input9 = document.querySelector('.input9');
+      const input10 = document.querySelector('.input10');
+      const input11 = document.querySelector('.input12');
+      const input12 = document.querySelector('.input13');
+      const input13 = document.querySelector('.input14');
+      // const log = document.getElementById('log');
+      // console.log(input)
+
+      input0.addEventListener('change', updateValue);
+      input1.addEventListener('change', updateValue);
+      input2.addEventListener('change', updateValue);
+      input3.addEventListener('change', updateValue);
+      input4.addEventListener('change', updateValue);
+      input5.addEventListener('change', updateValue);
+      input6.addEventListener('change', updateValue);
+      input7.addEventListener('change', updateValue);
+      input8.addEventListener('change', updateValue);
+      input9.addEventListener('change', updateValue);
+      input10.addEventListener('change', updateValue);
+      input11.addEventListener('change', updateValue);
+      input12.addEventListener('change', updateValue);
+      input13.addEventListener('change', updateValue);
+
+      function updateValue(e) {
+        let className=e.target.className;
+        if (className )
+        console.log(e.target.className);
+        console.log(e.target.value);
+
+      }
+        
 
 
     });
@@ -99,7 +146,9 @@ function App() {
     <div className="App">
       <body>
         <h3>Bar Chart of Food Waste Weight Average (Kilo)</h3>
-        <div id="BarChart"></div>
+        <div id="BarChart">
+        </div>
+        <div id="Inputs"></div>
         <div id="text"></div>
         <div id="pgraphs"></div>
 
