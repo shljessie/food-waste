@@ -16,8 +16,6 @@ function App() {
 
   let x = d3.scaleBand().rangeRound([0, width]).padding(0.1);
   let y = d3.scaleLinear().rangeRound([height, 0]);
-
-
   
   React.useEffect(() => {
     d3.csv(foodWeight).then((d) => {
@@ -167,25 +165,60 @@ function App() {
        
           
       }
-        
+
+      
+ 
 
 
     });
     return () => undefined;
   }, [])
+
+  function getWasteData(e) {
+    e.preventDefault();
+
+    let userWasteData=[];
+
+    const input0 = document.querySelector('.input0').value;
+    const input1 = document.querySelector('.input1').value;
+    const input2 = document.querySelector('.input2').value;
+    const input3 = document.querySelector('.input3').value;
+    const input4 = document.querySelector('.input4').value;
+    const input5 = document.querySelector('.input5').value;
+    const input6 = document.querySelector('.input6').value;
+    const input7 = document.querySelector('.input7').value;
+    const input8 = document.querySelector('.input8').value;
+    const input9 = document.querySelector('.input9').value;
+    const input10 = document.querySelector('.input10').value;
+    const input11 = document.querySelector('.input11').value;
+    const input12 = document.querySelector('.input12').value;
+    const input13 = document.querySelector('.input13').value;
+
+    userWasteData=[input0,input1,input2,input3,input4,input5,input6,input7,input8,input9,input10,input11,input12,input13]
+
+    console.log(userWasteData);
+    return userWasteData
+   
+  }
+
   
   return (
     <div className="App">
       <body>
          <h3>Bar Chart of Food Waste Weight Average (Kilo)</h3>
+         <h5>Insert the amount of food waste you produced in each category and press enter to record.</h5>
         <div id="container">
           <div id="BarChart"></div>
           <div id="myWaste"></div>
         </div>
         
         <div id="Inputs"></div>
-        <div id="text"></div>
-        <div id="pgraphs"></div>
+        <button type="button" onClick={getWasteData}> Enter </button>
+
+        <div id="circleContainer">
+          <div id="nationCircle"></div>
+          <div id="userCircle"></div>
+        </div>
         
 
       </body>

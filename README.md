@@ -1,8 +1,14 @@
-# BeAware! : How much Food Waste are you Producing? 
+# How much Food Waste are you Producing? 
 
 Contributors : Seonghee Lee (sl994), Daniela Rodriguez-Chavez (dr537)
 
 Website: https://shljessie.github.io/food-waste/ 
+
+### Design Draft 1 
+
+![imagedraft](src/images/designDraft1.jpg)
+### Google Experiments Inspiration 
+![imagedraft](src/images/googleExperiment.png)
 
 Using 2011 metrics, the total monetary waste from consumers comes out to be around $124 billion, or a wasted $400 a year per person. However it is not just an economic issue, there are wider implications; In the United States, avoidable food waste accounts for about 2% of the national emissions. Interestingly enough, previous literature has found that shopping routines and financial concerns are main variables in determining food waste on the side of the consumer. Because this problem has been analyzed in a variety of ways, we wanted to provide a unique perspective using gratitude as a lens. Because shopping routines and monetary spending that cause more food waste both stem from not knowing what is in your fridge, we focused our efforts on building a fridge interface that improved these habits in a minimally invasive way.
 

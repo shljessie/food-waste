@@ -182,3 +182,9 @@
   margin: 50px;
   width:1320;
 }
+
+#circleContainer{
+  width: 660px;
+  height: 660px;
+  position: relative;
+}
