@@ -139,8 +139,22 @@ function App() {
         console.log('clasNumT',classNameNumT)
         let value= e.target.value;
 
-        // User's food waste display
-        d3.select('#myWaste')
+        // if one digit
+        if(classNameNumT == ' '){
+           // User's food waste display
+            d3.select('#myWaste')
+            .append('div')
+            .attr('class',function (d,i) { return 'barTwo' } )
+            .attr('id',function (d,i) { return 'barTwo'+ classNameNum} )
+            .transition()
+            .style('height', `${((value*20)+150) }px`)
+            .style('margin-right', '10px')
+            .style('width', '80px')
+            .style('position', 'absolute')
+        }else{
+          // if twodigitnum
+          // User's food waste display
+          d3.select('#myWaste')
           .append('div')
           .attr('class',function (d,i) { return 'barTwo' } )
           .attr('id',function (d,i) { return 'barTwo'+ classNameNum + classNameNumT} )
@@ -149,6 +163,8 @@ function App() {
           .style('margin-right', '10px')
           .style('width', '80px')
           .style('position', 'absolute')
+        }
+       
           
       }
         

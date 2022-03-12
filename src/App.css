@@ -89,7 +89,7 @@
   left: 30px;
 }
 
-#barTwo1{
+#barTwo1 {
   top:-180px;
   left: 120px;
 }
@@ -136,17 +136,13 @@
 
 #barTwo12{
   top:-180px;
-  left: 1020px;
+  left: 1110px;
 }
 
 #barTwo13{
   top:-180px;
-  left: 1020px;
+  left: 1200px;
 }
-
-/* #barWaste0{
-  background-color: red;
-} */
 
 #Inputs { 
   display: flex; 
