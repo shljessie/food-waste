@@ -36,14 +36,36 @@
     transform: rotate(360deg);
   }
 }
+#container{
+  width: 1320px;
+  height: 660px;
+  position: relative;
 
+}
 #BarChart { 
   display: flex; 
   flex-direction: row; 
   align-items: flex-end; 
   justify-content: center; 
+  position:absolute;
   margin: 50px;
+  margin-bottom: 0px;
   padding: 30px;
+  padding-bottom: 0px;
+  left: 0;
+}
+#myWaste { 
+  display: flex; 
+  flex-direction: row; 
+  align-items: flex-end; 
+  justify-content: center; 
+  position:absolute;
+  padding: 30px;
+  margin: 50px;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  
 }
 
 .bar {
@@ -52,12 +74,87 @@
   min-height: 150px;
 }
 
+.barTwo{
+  background-color: red;
+  width: 10px; 
+  min-height: 150px;
+  z-index: 10;
+  opacity: 20%
+}
+
+/* foodWaste bar styling */
+
+#barTwo0{
+  top:-180px;
+  left: 30px;
+}
+
+#barTwo1{
+  top:-180px;
+  left: 120px;
+}
+#barTwo2{
+  top:-180px;
+  left: 210px;
+}
+#barTwo3{
+  top:-180px;
+  left: 300px;
+}
+#barTwo4{
+  top:-180px;
+  left: 390px;
+}
+#barTwo5{
+  top:-180px;
+  left: 480px;
+}
+#barTwo6{
+  top:-180px;
+  left: 570px;
+}
+#barTwo7{
+  top:-180px;
+  left: 660px;
+}
+#barTwo8{
+  top:-180px;
+  left: 750px;
+}
+#barTwo9{
+  top:-180px;
+  left: 840px;
+}
+#barTwo10{
+  top:-180px;
+  left: 930px;
+}
+#barTwo11{
+  top:-180px;
+  left: 1020px;
+}
+
+#barTwo12{
+  top:-180px;
+  left: 1020px;
+}
+
+#barTwo13{
+  top:-180px;
+  left: 1020px;
+}
+
+/* #barWaste0{
+  background-color: red;
+} */
+
 #Inputs { 
   display: flex; 
   flex-direction: row; 
   align-items: flex-end; 
   justify-content: center; 
+  padding-top: 0;
+  margin-top: 0;
   margin: 50px;
-  padding: 30px;
-  padding-top: 0px;
+  width:1320;
 }

@@ -64,6 +64,7 @@ function App() {
         .duration(1000)
         .style('height', bar => `${(bar.Kilo*20)+150}px`)
         .style('width', '80px')
+        .attr('id', function (d,i) { return 'bar'+i } )
         .style('margin-right', '10px')
         .delay(300)
         
@@ -89,7 +90,7 @@ function App() {
         .attr('class', function (d,i) { return 'input'+i } )
         .attr('x',function (d,i) { return 0 })
         .attr('y', function (d,i) { return data[i].Kilo*20; } )
-        .style('width', '70px')
+        .style('width', '50px')
         .style('height', '20px')
 
       // let inputDict={};
@@ -107,9 +108,9 @@ function App() {
       const input8 = document.querySelector('.input8');
       const input9 = document.querySelector('.input9');
       const input10 = document.querySelector('.input10');
-      const input11 = document.querySelector('.input12');
-      const input12 = document.querySelector('.input13');
-      const input13 = document.querySelector('.input14');
+      const input11 = document.querySelector('.input11');
+      const input12 = document.querySelector('.input12');
+      const input13 = document.querySelector('.input13');
       // const log = document.getElementById('log');
       // console.log(input)
 
@@ -130,10 +131,25 @@ function App() {
 
       function updateValue(e) {
         let className=e.target.className;
-        if (className )
-        console.log(e.target.className);
-        console.log(e.target.value);
+        let classNameNum=className[5];
+        let classNameNumT=className[6];
+        
+        console.log(className);
+        console.log('clasNum',classNameNum)
+        console.log('clasNumT',classNameNumT)
+        let value= e.target.value;
 
+        // User's food waste display
+        d3.select('#myWaste')
+          .append('div')
+          .attr('class',function (d,i) { return 'barTwo' } )
+          .attr('id',function (d,i) { return 'barTwo'+ classNameNum + classNameNumT} )
+          .transition()
+          .style('height', `${((value*20)+150) }px`)
+          .style('margin-right', '10px')
+          .style('width', '80px')
+          .style('position', 'absolute')
+          
       }
         
 
@@ -145,12 +161,16 @@ function App() {
   return (
     <div className="App">
       <body>
-        <h3>Bar Chart of Food Waste Weight Average (Kilo)</h3>
-        <div id="BarChart">
+         <h3>Bar Chart of Food Waste Weight Average (Kilo)</h3>
+        <div id="container">
+          <div id="BarChart"></div>
+          <div id="myWaste"></div>
         </div>
+        
         <div id="Inputs"></div>
         <div id="text"></div>
         <div id="pgraphs"></div>
+        
 
       </body>
     </div>
