@@ -60,7 +60,7 @@
   align-items: flex-end; 
   justify-content: center; 
   position:absolute;
-  padding: 30px;
+  padding: 15px;
   margin: 50px;
   z-index: 10;
   bottom: 0;
@@ -85,63 +85,91 @@
 /* foodWaste bar styling */
 
 #barTwo0{
-  top:-180px;
+  top:0px;
   left: 30px;
+  transform: rotatex(180deg);
+  transform-origin: top;
 }
 
 #barTwo1 {
-  top:-180px;
+  top:0px;
   left: 120px;
+  transform: rotatex(180deg);
+  transform-origin: top;
 }
 #barTwo2{
-  top:-180px;
+  top:0px;
   left: 210px;
+  transform: rotatex(180deg);
+  transform-origin: top;
 }
 #barTwo3{
-  top:-180px;
+  top:0px;
   left: 300px;
+  transform: rotatex(180deg);
+  transform-origin: top;
 }
 #barTwo4{
-  top:-180px;
+  top:0px;
   left: 390px;
+  transform: rotatex(180deg);
+  transform-origin: top;
 }
 #barTwo5{
-  top:-180px;
+  top:0px;
   left: 480px;
+  transform: rotatex(180deg);
+  transform-origin: top;
 }
 #barTwo6{
-  top:-180px;
+  top:0px;
   left: 570px;
+  transform: rotatex(180deg);
+  transform-origin: top;
 }
 #barTwo7{
-  top:-180px;
+  top:0px;
   left: 660px;
+  transform: rotatex(180deg);
+  transform-origin: top;
 }
 #barTwo8{
-  top:-180px;
+  top:0px;
   left: 750px;
+  transform: rotatex(180deg);
+  transform-origin: top;
 }
 #barTwo9{
-  top:-180px;
+  top:0px;
   left: 840px;
+  transform: rotatex(180deg);
+  transform-origin: top;
 }
 #barTwo10{
-  top:-180px;
+  top:0px;
   left: 930px;
+  transform: rotatex(180deg);
+  transform-origin: top;
 }
 #barTwo11{
-  top:-180px;
+  top:0px;
   left: 1020px;
+  transform: rotatex(180deg);
+  transform-origin: top;
 }
 
 #barTwo12{
-  top:-180px;
+  top:0px;
   left: 1110px;
+  transform: rotatex(180deg);
+  transform-origin: top;
 }
 
 #barTwo13{
-  top:-180px;
+  top:0px;
   left: 1200px;
+  transform: rotatex(180deg);
+  transform-origin: top;
 }
 
 #Inputs { 
