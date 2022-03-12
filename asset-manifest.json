@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/food-waste/static/css/main.472c76fd.css",
-    "main.js": "/food-waste/static/js/main.b00966b3.js",
+    "main.css": "/food-waste/static/css/main.8015e295.css",
+    "main.js": "/food-waste/static/js/main.0ad4d61a.js",
     "static/js/787.bc19b231.chunk.js": "/food-waste/static/js/787.bc19b231.chunk.js",
     "index.html": "/food-waste/index.html",
     "static/media/foodWeight.csv": "/food-waste/static/media/foodWeight.1d20bd1ebe9e20582bc2.csv",
-    "main.472c76fd.css.map": "/food-waste/static/css/main.472c76fd.css.map",
-    "main.b00966b3.js.map": "/food-waste/static/js/main.b00966b3.js.map",
+    "main.8015e295.css.map": "/food-waste/static/css/main.8015e295.css.map",
+    "main.0ad4d61a.js.map": "/food-waste/static/js/main.0ad4d61a.js.map",
     "787.bc19b231.chunk.js.map": "/food-waste/static/js/787.bc19b231.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.472c76fd.css",
-    "static/js/main.b00966b3.js"
+    "static/css/main.8015e295.css",
+    "static/js/main.0ad4d61a.js"
   ]
 }
