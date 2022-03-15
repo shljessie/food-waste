@@ -7,7 +7,8 @@ import {useEffect, useState} from 'react'
 import React from "react";
 import foodWeight from './data/foodWeight.csv'
 
-var userWasteSum;
+var userWasteSum=0;
+var userCircleRadius=0;
 
 function App() {
   let data;
@@ -95,24 +96,6 @@ function App() {
           .attr('r', 130)
           .attr('stroke', 'none')
           .attr('fill', 'lightgray');
-
-
-        // create circle 
-        // create svg element:
-        var svg2 = d3.select("#userCircle")
-        .append("svg")
-        .attr("width", 400)
-        .attr("height", 400)
-        .attr('id','userCircle')
-
-        // // Add the path using this helper function
-        svg2.append('circle')
-        .attr('cx', 150)
-        .attr('cy', 150)
-        .attr('r', 100)
-        .attr('stroke', 'none')
-        .attr('opacity', '50%')
-        .attr('fill', 'red');
       
    
       const input0 = document.querySelector('.input0');
@@ -202,10 +185,16 @@ function App() {
     const input11 = parseInt(document.querySelector('.input11').value);
     const input12 = parseInt(document.querySelector('.input12').value);
     const input13 =parseInt( document.querySelector('.input13').value);
-    console.log('input2',input2)
 
-    // add code that accounts for NaN values
+    
     userWasteData=[input0,input1,input2,input3,input4,input5,input6,input7,input8,input9,input10,input11,input12,input13]
+    
+    // add code that accounts for NaN values
+    for(let i = 0; i < 14; i++){
+      if (userWasteData[i]==='NaN'){
+        userWasteData[i]=0
+      }
+    }
 
     userWasteSum= input0+input1+input2+input3+input4+input5+input6+input7+input8+input9+input10+input11+input12+input13
     console.log(userWasteSum)
@@ -218,11 +207,15 @@ function App() {
                 .attr("height", 400)
                 .attr('id','userCircle')
 
+    this.userCircleRadius=(userWasteSum/(123.8))*100;
+    console.log('userRadius',this.userCircleRadius);
+
     // // Add the path using this helper function
     svg2.append('circle')
       .attr('cx', 150)
       .attr('cy', 150)
-      .attr('r', 100)
+      .attr('r', this.userCircleRadius)
+      .attr('id','userCircle')
       .attr('stroke', 'none')
       .attr('fill', 'red');
 
@@ -231,7 +224,7 @@ function App() {
    
   }
 
-
+  console.log('GLobla read!',userWasteSum);
   
   return (
     <div className="App">
