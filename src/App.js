@@ -91,8 +91,21 @@ function App() {
         .style('width', '50px')
         .style('height', '20px')
 
-      // let inputDict={};
-      // on user input change
+        // create circle 
+        // create svg element:
+        var svg = d3.select("#nationCircle")
+                    .append("svg")
+                    .attr("width", 400)
+                    .attr("height", 400)
+                    .attr('id','nationCircle')
+
+        // Add the path using this helper function
+        svg.append('circle')
+          .attr('cx', 150)
+          .attr('cy', 150)
+          .attr('r', 130)
+          .attr('stroke', 'none')
+          .attr('fill', 'lightgray');
       
    
       const input0 = document.querySelector('.input0');
@@ -131,11 +144,6 @@ function App() {
         let className=e.target.className;
         let classNameNum=className[5];
         let classNameNumT=className[6];
-        console.log('className',className.length)
-        
-        console.log(classNameNum);
-        console.log('clasNum',classNameNum)
-        console.log('clasNumT',classNameNumT)
         let value= e.target.value;
 
         // if one digit
@@ -163,14 +171,7 @@ function App() {
           .style('width', '80px')
           .style('position', 'absolute')
         }
-       
-          
       }
-
-      
- 
-
-
     });
     return () => undefined;
   }, [])
@@ -201,6 +202,7 @@ function App() {
     return userWasteData
    
   }
+
 
   
   return (
