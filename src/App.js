@@ -131,14 +131,15 @@ function App() {
         let className=e.target.className;
         let classNameNum=className[5];
         let classNameNumT=className[6];
+        console.log('className',className.length)
         
-        console.log(className);
+        console.log(classNameNum);
         console.log('clasNum',classNameNum)
         console.log('clasNumT',classNameNumT)
         let value= e.target.value;
 
         // if one digit
-        if(classNameNumT == ' '){
+        if(className.length === 20 || className.length === 6){
            // User's food waste display
             d3.select('#myWaste')
             .append('div')
