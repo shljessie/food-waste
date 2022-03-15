@@ -188,3 +188,17 @@
   height: 660px;
   position: relative;
 }
+#nationCircle{
+  position:absolute;
+}
+
+#userCircle{
+  position:absolute;
+  z-index:10;
+}
+
+#userDescr{
+  color:red;
+}
+
+

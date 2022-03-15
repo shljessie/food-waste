@@ -7,6 +7,8 @@ import {useEffect, useState} from 'react'
 import React from "react";
 import foodWeight from './data/foodWeight.csv'
 
+var userWasteSum;
+
 function App() {
   let data;
   let foodCat = [];
@@ -106,6 +108,24 @@ function App() {
           .attr('r', 130)
           .attr('stroke', 'none')
           .attr('fill', 'lightgray');
+
+
+        // create circle 
+        // create svg element:
+        var svg2 = d3.select("#userCircle")
+        .append("svg")
+        .attr("width", 400)
+        .attr("height", 400)
+        .attr('id','userCircle')
+
+        // // Add the path using this helper function
+        svg2.append('circle')
+        .attr('cx', 150)
+        .attr('cy', 150)
+        .attr('r', 100)
+        .attr('stroke', 'none')
+        .attr('opacity', '50%')
+        .attr('fill', 'red');
       
    
       const input0 = document.querySelector('.input0');
@@ -181,22 +201,43 @@ function App() {
 
     let userWasteData=[];
 
-    const input0 = document.querySelector('.input0').value;
-    const input1 = document.querySelector('.input1').value;
-    const input2 = document.querySelector('.input2').value;
-    const input3 = document.querySelector('.input3').value;
-    const input4 = document.querySelector('.input4').value;
-    const input5 = document.querySelector('.input5').value;
-    const input6 = document.querySelector('.input6').value;
-    const input7 = document.querySelector('.input7').value;
-    const input8 = document.querySelector('.input8').value;
-    const input9 = document.querySelector('.input9').value;
-    const input10 = document.querySelector('.input10').value;
-    const input11 = document.querySelector('.input11').value;
-    const input12 = document.querySelector('.input12').value;
-    const input13 = document.querySelector('.input13').value;
+    const input0 = parseInt(document.querySelector('.input0').value);
+    const input1 = parseInt(document.querySelector('.input1').value);
+    const input2 = parseInt(document.querySelector('.input2').value);
+    const input3 = parseInt(document.querySelector('.input3').value);
+    const input4 = parseInt(document.querySelector('.input4').value);
+    const input5 = parseInt(document.querySelector('.input5').value);
+    const input6 = parseInt(document.querySelector('.input6').value);
+    const input7 = parseInt(document.querySelector('.input7').value);
+    const input8 = parseInt(document.querySelector('.input8').value);
+    const input9 = parseInt(document.querySelector('.input9').value);
+    const input10 = parseInt(document.querySelector('.input10').value);
+    const input11 = parseInt(document.querySelector('.input11').value);
+    const input12 = parseInt(document.querySelector('.input12').value);
+    const input13 =parseInt( document.querySelector('.input13').value);
+    console.log('input2',input2)
 
+    // add code that accounts for NaN values
     userWasteData=[input0,input1,input2,input3,input4,input5,input6,input7,input8,input9,input10,input11,input12,input13]
+
+    userWasteSum= input0+input1+input2+input3+input4+input5+input6+input7+input8+input9+input10+input11+input12+input13
+    console.log(userWasteSum)
+
+    // create circle 
+    // create svg element:
+    var svg2 = d3.select("#userCircle")
+                .append("svg")
+                .attr("width", 400)
+                .attr("height", 400)
+                .attr('id','userCircle')
+
+    // // Add the path using this helper function
+    svg2.append('circle')
+      .attr('cx', 150)
+      .attr('cy', 150)
+      .attr('r', 100)
+      .attr('stroke', 'none')
+      .attr('fill', 'red');
 
     console.log(userWasteData);
     return userWasteData
@@ -219,6 +260,8 @@ function App() {
         <button type="button" onClick={getWasteData}> Enter </button>
 
         <div id="circleContainer">
+          <p id="nationalDescr">National Waste Total per year (gray): 123.8</p>
+          <p id="c">Your Waste Total per year (red)</p>
           <div id="nationCircle"></div>
           <div id="userCircle"></div>
         </div>
