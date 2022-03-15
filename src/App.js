@@ -24,15 +24,11 @@ function App() {
       data=d;
 
       console.log(data);
-      // d3.select('#pgraphs').selectAll('p').data(data).enter().append('p').text(dt => dt.Commodity + ": " + dt.Kilo)
 
       for (let i = 0; i < data.length; i++) {
         foodCat.push(data[i].Commodity);
         foodKilo.push(data[i].Kilo);
       }
-
-      // console.log(foodCat);
-      // console.log(foodKilo);
 
       x.domain(foodCat);
       y.domain([0, d3.max(foodKilo, function(d) { return d; })]);
@@ -54,19 +50,10 @@ function App() {
         .enter()
         .append('div')
         .classed('bar', true)
-        .style('height', `${(getMax()*20)+150 }px`)
-
-  
-      // After bar animation 
-      d3.select('#BarChart')
-        .selectAll('.bar')
-        .transition()
-        .duration(1000)
         .style('height', bar => `${(bar.Kilo*20)+150}px`)
         .style('width', '80px')
         .attr('id', function (d,i) { return 'bar'+i } )
         .style('margin-right', '10px')
-        .delay(300)
         
 
       // adding bar chart labeling
