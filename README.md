@@ -3,6 +3,9 @@
 Contributors : Seonghee Lee (sl994), Daniela Rodriguez-Chavez (dr537)
 
 Website: https://shljessie.github.io/food-waste/ 
+### Design Draft 2 
+
+![imagedraft](src/images/designDraft2.jpg)
 
 ### Design Draft 1 
 
