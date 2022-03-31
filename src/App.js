@@ -4,8 +4,11 @@ import * as d3 from 'd3';
 
 import {useEffect, useState} from 'react'
 
+import { BrowserRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import React from "react";
 import foodWeight from './data/foodWeight.csv'
+import { render } from "react-dom";
 
 var userWasteSum=0;
 var userCircleRadius=0;
@@ -140,26 +143,26 @@ function App() {
         if(className.length === 20 || className.length === 6){
            // User's food waste display
             d3.select('#myWaste')
+              .append('div')
+              .attr('class',function (d,i) { return 'barTwo' } )
+              .attr('id',function (d,i) { return 'barTwo'+ classNameNum} )
+              .transition()
+              .style('height', `${((value*20)+150) }px`)
+              .style('margin-right', '10px')
+              .style('width', '80px')
+              .style('position', 'absolute')
+        }else{
+          // if twodigitnum
+          // User's food waste display
+          d3.select('#myWaste')
             .append('div')
             .attr('class',function (d,i) { return 'barTwo' } )
-            .attr('id',function (d,i) { return 'barTwo'+ classNameNum} )
+            .attr('id',function (d,i) { return 'barTwo'+ classNameNum + classNameNumT} )
             .transition()
             .style('height', `${((value*20)+150) }px`)
             .style('margin-right', '10px')
             .style('width', '80px')
             .style('position', 'absolute')
-        }else{
-          // if twodigitnum
-          // User's food waste display
-          d3.select('#myWaste')
-          .append('div')
-          .attr('class',function (d,i) { return 'barTwo' } )
-          .attr('id',function (d,i) { return 'barTwo'+ classNameNum + classNameNumT} )
-          .transition()
-          .style('height', `${((value*20)+150) }px`)
-          .style('margin-right', '10px')
-          .style('width', '80px')
-          .style('position', 'absolute')
         }
       }
     });
@@ -228,6 +231,19 @@ function App() {
   
   return (
     <div className="App">
+    <a href='page2.php?id=2489&user=user1'>User1</a>
+    <br/>
+    <a href='page2.php?id=2489&user=user2'>User2</a>
+    <br/>
+    <a href='page2.php?id=2489&user=user3'>User3</a>
+    <br/>
+    <a href='page2.php?id=2489&user=user4'>User4</a>
+    <br/>
+    <a href='page2.php?id=2489&user=user5'>User5</a>
+    <br/>
+    <a href='page2.php?id=2489&user=user6'>User6</a>
+    <br/>
+    <a href='page2.php?id=2489&user=user7'>User7</a>
       <body>
          <h3>Bar Chart of Food Waste Weight Average (Kilo)</h3>
          <h5>Insert the amount of food waste you produced in each category and press enter to record.</h5>
