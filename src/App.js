@@ -7,6 +7,7 @@ import {useEffect, useState} from 'react'
 import { BrowserRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import React from "react";
+import Slider from 'react-input-slider';
 import foodWeight from './data/foodWeight.csv'
 import { render } from "react-dom";
 
@@ -220,15 +221,41 @@ function App() {
       .attr('r', this.userCircleRadius)
       .attr('id','userCircle')
       .attr('stroke', 'none')
-      .attr('fill', 'red');
+      .attr('fill', 'pink');
 
     console.log(userWasteData);
     return userWasteData
    
+  }  
+
+  // slider states https://github.com/swiftcarrot/react-input-slider
+  const [state, setState] = useState({grain: 0, fruitf:0, fruitp:0, vegf:0, vegp:0, milk:0, dairy:0, meat:0, poultry:0,fish:0, eggs:0, nuts:0,sweetners:0, fats:0 });
+
+
+  // on button press
+  function saveData(e){
+    e.preventDefault();
+    // create circle visualzation 
+    
+    // add all the values in the state
+    let total = 0
+
+    Object.entries(state).forEach(([key, value]) => {
+      total += value
+    })
+    console.log(total);
+
+    // save data into json file  https://www.pluralsight.com/guides/load-an-existing-database-record-to-a-react.js-form 
+
+    
+    // get data
+    // save user individual inputs 
+    // save user total value 
+    
   }
 
-  console.log('GLobla read!',userWasteSum);
   
+  console.log(state);
   return (
     <div className="App">
     <a href='page2.php?id=2489&user=user1'>User1</a>
@@ -244,20 +271,67 @@ function App() {
     <a href='page2.php?id=2489&user=user6'>User6</a>
     <br/>
     <a href='page2.php?id=2489&user=user7'>User7</a>
+
+
       <body>
          <h3>Bar Chart of Food Waste Weight Average (Kilo)</h3>
          <h5>Insert the amount of food waste you produced in each category and press enter to record.</h5>
+
+        <div id="sliderInput">
+          <p>{state.grain}</p>
+          <Slider id="slider" axis="x" x={state.grain} onChange={({ x }) => setState({...state, grain: x})} styles={{track: { backgroundColor: 'gray'}, active: { backgroundColor: 'pink'},}}/>
+          <br/>
+          <p>{state.fruitf}</p>
+          <Slider id="slider"  axis="x" x={state.fruitf} onChange={({ x }) => setState({...state, fruitf: x})} styles={{track: { backgroundColor: 'gray'}, active: { backgroundColor: 'pink'},}}/>
+          <br/>
+          <p>{state.fruitp}</p>
+          <Slider id="slider"  axis="x" x={state.fruitp} onChange={({ x }) => setState({...state, fruitp: x})} styles={{track: { backgroundColor: 'gray'}, active: { backgroundColor: 'pink'},}}/>
+          <br/>
+          <p>{state.vegf}</p>
+          <Slider  id="slider" axis="x" x={state.vegf} onChange={({ x }) => setState({...state, vegf: x})} styles={{track: { backgroundColor: 'gray'}, active: { backgroundColor: 'pink'},}}/>
+          <br/>
+          {state.vegp}
+          <Slider id="slider" axis="x" x={state.vegp} onChange={({ x }) => setState({...state, vegp: x})} styles={{track: { backgroundColor: 'gray'}, active: { backgroundColor: 'pink'},}}/>
+          <br/>
+          {state.milk}
+          <Slider id="slider" axis="x" x={state.milk} onChange={({ x }) => setState({...state, milk: x})} styles={{track: { backgroundColor: 'gray'}, active: { backgroundColor: 'pink'},}}/>
+          <br/>
+          {state.dairy}
+          <Slider id="slider"  axis="x" x={state.dairy} onChange={({ x }) => setState({...state, dairy: x})} styles={{track: { backgroundColor: 'gray'}, active: { backgroundColor: 'pink'},}}/>
+          <br/>
+          {state.meat}
+          <Slider id="slider"  axis="x" x={state.meat} onChange={({ x }) => setState({...state, meat: x})} styles={{track: { backgroundColor: 'gray'}, active: { backgroundColor: 'pink'},}}/>
+          <br/>
+          {state.poultry}
+          <Slider id="slider"  axis="x" x={state.poultry} onChange={({ x }) => setState({...state, poultry: x})} styles={{track: { backgroundColor: 'gray'}, active: { backgroundColor: 'pink'},}}/>
+          <br/>
+          {state.fish}
+          <Slider id="slider"  axis="x" x={state.fish} onChange={({ x }) => setState({...state, fish: x})} styles={{track: { backgroundColor: 'gray'}, active: { backgroundColor: 'pink'},}}/>
+          <br/>
+          {state.eggs}
+          <Slider id="slider"  axis="x" x={state.eggs} onChange={({ x }) => setState({...state, eggs: x})} styles={{track: { backgroundColor: 'gray'}, active: { backgroundColor: 'pink'},}}/>
+          <br/>
+          {state.nuts}
+          <Slider id="slider"  axis="x" x={state.nuts} onChange={({ x }) => setState({...state, nuts: x})} styles={{track: { backgroundColor: 'gray'}, active: { backgroundColor: 'pink'},}}/>
+          <br/>
+          {state.sweetners}
+          <Slider id="slider"  axis="x" x={state.sweetners} onChange={({ x }) => setState({...state, sweetners: x})} styles={{track: { backgroundColor: 'gray'}, active: { backgroundColor: 'pink'},}}/>
+          <br/>
+          {state.fats}
+          <Slider id="slider"  axis="x" x={state.fats} onChange={({ x }) => setState({...state, fats: x})} styles={{track: { backgroundColor: 'gray'}, active: { backgroundColor: 'pink'},}}/>
+        </div>
+
         <div id="container">
           <div id="BarChart"></div>
           <div id="myWaste"></div>
         </div>
         
         <div id="Inputs"></div>
-        <button type="button" onClick={getWasteData}> Enter </button>
+        <button type="button" onClick={saveData}> Enter </button>
 
         <div id="circleContainer">
           <p id="nationalDescr">National Waste Total per year (gray): 123.8</p>
-          <p id="c">Your Waste Total per year (red)</p>
+          <p id="c">Your Waste Total per year (pink)</p>
           <div id="nationCircle"></div>
           <div id="userCircle"></div>
         </div>

@@ -1,4 +1,4 @@
-# How much Food Waste are you Producing? 
+# How much Food Waste are you Producing?
 
 Contributors : Seonghee Lee (sl994), Daniela Rodriguez-Chavez (dr537)
 
